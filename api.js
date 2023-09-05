@@ -1,3 +1,8 @@
+/*
+* Ibrahim Hasaan 2023
+* MIT License
+*/
+
 // TODO: transfer to typescipt or add function signatures
 class RateMyProfessorAPI {
     constructor(name) {
