@@ -118,11 +118,27 @@ class RateMyProfessorAPI {
     }
 }
 
-// Example Run:
+class FileUtility {
+    constructor() {
+        this.fs = require('fs');
+    }
+    // writeToJSONFile(path: string, data: object | object[]): Promise<void>
+    writeToJSONFile(path, data) {
+        return this.fs.promises.writeFile(path, JSON.stringify(data));
+    }
 
-/* 
+    // readFromJSONFile(path: string): Promise<object | object[]>
+    readFromJSONFile(path) {
+        return this.fs.promises.readFile(path).then(jsonData => JSON.parse(jsonData));
+    }
+}
+
+// Example Run:
+ 
 let api = new RateMyProfessorAPI("University of Massachusetts Amherst")
 
 api.getReviews()
-.then(reviews => console.log(reviews)); 
-*/
+.then(reviews => {
+    let file = new FileUtility();
+    file.writeToJSONFile("professorsJSON.json", reviews);
+})
