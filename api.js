@@ -119,7 +119,10 @@ class RateMyProfessorAPI {
 }
 
 // Example Run:
+
+/* 
 let api = new RateMyProfessorAPI("University of Massachusetts Amherst")
-api
-.getReviews()
-.then(reviews => console.log(reviews));
+
+api.getReviews()
+.then(reviews => console.log(reviews)); 
+*/
